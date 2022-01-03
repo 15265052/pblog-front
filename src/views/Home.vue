@@ -14,7 +14,7 @@
             <!--焦点图-->
             <div class="top-feature" v-if="!hideSlogan">
                 <section-title>
-                    <div style="display: flex;align-items: flex-end;">聚焦<small-ico></small-ico></div>
+                    <div style="display: flex;align-items: flex-end;">精选<small-ico></small-ico></div>
                 </section-title>
                 <div class="feature-content">
                     <div class="feature-item" v-for="item in features" :key="item.title">
@@ -24,7 +24,7 @@
             </div>
             <!--文章列表-->
             <main class="site-main" :class="{'search':hideSlogan}">
-                <section-title v-if="!hideSlogan">推荐</section-title>
+                <section-title v-if="!hideSlogan">往期文章</section-title>
                 <template v-for="item in postList">
                     <post :post="item" :key="item.id"></post>
                 </template>
@@ -90,8 +90,8 @@
             },
             fetchList() {
                 fetchList().then(res => {
-                    this.postList = res.data.items || []
-                    this.currPage = res.data.page
+                    this.postList = res.data.posts|| []
+                    this.currPage = res.data.curPage
                     this.hasNextPage = res.data.hasNextPage
                 }).catch(err => {
                     console.log(err)

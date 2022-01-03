@@ -3,7 +3,7 @@
         <div class="site-logo">
             <router-link to="/">
                 <img src="@/assets/site-logo.svg" alt="">
-                <p class="site-name">Gblog</p>
+                <p class="site-name" style="color: white">杜晓源的个人站</p>
             </router-link>
         </div>
         <div class="menus-btn" @click.stop="mobileShow=!mobileShow">
@@ -15,7 +15,7 @@
             <div class="menu-item hasChild">
                 <a href="#">文章</a>
                 <div class="childMenu" v-if="category.length">
-                    <div class="sub-menu" v-for="item in category" :key="item.title"><router-link :to="`/category/${item.title}`">{{item.title}}</router-link></div>
+                    <div class="sub-menu" v-for="item in category" :key="item.title"><router-link :to="`/post/category/${item.title}`">{{item.title}}</router-link></div>
                 </div>
             </div>
             <div class="menu-item"><router-link to="/friend">友链</router-link></div>
@@ -87,11 +87,12 @@
         -moz-transition: .3s all linear;
         -o-transition: .3s all ease;
         -ms-transition: .3s all ease;
+        background-color: #545454;
         &.hidden{
             top: -100px;
         }
         &.fixed{
-            background-color: #FFFFFF;
+            background-color: #545454;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }
     }
@@ -127,7 +128,7 @@
             position: relative;
             a{
                 padding: 12px 10px;
-                color: #545454;
+                color: #ffffff;
                 font-weight: 500;
                 font-size: 16px;
                 &:hover {
@@ -208,7 +209,7 @@
             position: absolute;
             display: none;
             visibility: hidden;
-            background-color: #F9F9F9;
+            background-color: #272727b2;
             width: 100%;
             left: 0;
             top: 80px;

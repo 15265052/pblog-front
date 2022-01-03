@@ -6,7 +6,7 @@
                 <div class="focusinfo">
                     <!-- 头像 -->
                     <div class="header-tou">
-                        <router-link to="/"><img :src="websiteInfo.avatar"></router-link>
+                        <router-link to="/"><img src='../assets/avatar.png'></router-link>
                     </div>
                     <!-- 简介 -->
                     <div class="header-info">
@@ -37,7 +37,7 @@
         props:{
             src:{
                 type: String,
-                default: 'https://s1.ax1x.com/2020/05/23/YxaLMq.jpg'
+                default: ''
             },
             isHome:{
                 type: [Boolean,String],

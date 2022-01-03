@@ -52,6 +52,7 @@
         font-size: 18px;
         position: relative;
         top: 3px;
+        color: white;
     }
     input{
         border:none;

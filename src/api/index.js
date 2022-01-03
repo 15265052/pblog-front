@@ -10,7 +10,7 @@ export function fetchList(params) {
 
 export function fetchFocus() {
     return request({
-        url: '/focus/list',
+        url: '/post/focus',
         method: 'get',
         params: {}
     })
@@ -18,7 +18,7 @@ export function fetchFocus() {
 
 export function fetchCategory() {
     return request({
-        url: '/category',
+        url: '/post/category',
         method: 'get',
         params: {}
     })

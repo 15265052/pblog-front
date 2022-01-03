@@ -9,8 +9,11 @@
             <h1 class="entry-title">
                 <router-link :to="`/article/${post.id}`"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</router-link>
             </h1>
+            <div class="p-tag">
+                #{{post.tag}}
+            </div>
             <div class="p-time">
-                <i class="iconfont iconmeditor-time"></i> {{post.pubTime | parseTime}}<i v-if="post.isHot" class="iconfont iconfire" style="margin-left: 5px;color: #ff6d6d;"></i>
+                <i class="iconfont iconmeditor-time"></i> {{post.uploadTime}}<i v-if="post.isHot" class="iconfont iconfire" style="margin-left: 5px;color: #ff6d6d;"></i>
             </div>
             <p class="summary">{{post.summary}}</p>
             <footer class="entry-footer">
@@ -21,17 +24,17 @@
                     <div class="comnum">
                         <span>
                             <i class="iconfont iconcomment"></i>
-                            <a href="https://zhebk.cn/Web/Akina.html">{{post.commentsCount}} 条评论</a>
+                            <a href="https://zhebk.cn/Web/Akina.html">{{post.commentNum}} 条评论</a>
                         </span>
                     </div>
                     <div class="views">
-                        <span><i class="iconfont iconeyes"></i>{{post.viewsCount}} 热度</span>
+                        <span><i class="iconfont iconeyes"></i>{{post.viewsNum}} 热度</span>
                     </div>
                 </div>
             </footer>
         </div>
         <hr/>
-    </article>
+    </article>                                                                                       
 </template>
 
 <script>
@@ -104,6 +107,17 @@
             align-items: center;
         }
 
+        .p-tag {
+            position: absolute;
+            right: 200px;
+            top: 16px;
+            font-size: 15px;
+            color: #989898;
+            letter-spacing: 1px;
+            font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+        }
         p.summary {
             min-height: 60px;
             margin: 0 0 0 17%;
